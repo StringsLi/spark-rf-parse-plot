@@ -35,13 +35,15 @@ class ParseFromJson():
         self.num_classes = num_classes
         self.load_model(file_name)
 
-    def load_model(self, file_name):
-        for root, dirs, files in os.walk(file_name):
-            for f in files:
-                path = os.path.join(root, f)
-                with open(path) as load_f:
-                    d = json.load(load_f)
-                    self.treeNodeList.append(self.walk(d))
+    def load_model(self, file_path):
+        filenames = os.listdir(file_path)  
+        filenames.sort(key=lambda x: int(x.replace(".json", "").split("_")[1]))
+        for file_name in filenames:
+            path = file_path + "/" + file_name
+            print(path)
+            with open(path) as load_f:
+                d = json.load(load_f)
+                self.treeNodeList.append(self.walk(d))
 
     def walk(self,data):
         root = Node()

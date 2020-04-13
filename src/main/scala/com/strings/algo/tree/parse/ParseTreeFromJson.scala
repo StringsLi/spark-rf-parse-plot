@@ -1,8 +1,13 @@
 package com.strings.algo.tree.parse
 
+/**
+ * Spark Tree 的解析
+ */
+
 import java.io.File
 import scala.collection.mutable.ArrayBuffer
 import com.strings.algo.tree.util.GsonUtil
+import scala.collection.mutable
 import scala.io.Source
 
 case class decisionNode(featureIndex:Option[Int],
@@ -18,14 +23,18 @@ case class decisionNode(featureIndex:Option[Int],
                         leftChild:Option[decisionNode],
                         rightChild:Option[decisionNode])
 
+case class dotNode(parentId:Int,id:Int,node:decisionNode)
+
 class ParseTreeFromJson{
     var treeNodeList:ArrayBuffer[decisionNode] = new ArrayBuffer[decisionNode]() //一定要初始化，构造的决策树列表
     var nums_class:Int = 2  //分几类问题
 
     def load(path:String): Unit = {
       val filesIter = subdirs(path)
-      while(filesIter.hasNext){
-        val file = filesIter.next()
+      //对读进来的文件进行排序，按照文件1,2,3排序，默认是按照字典排序的。
+      val fileArray = filesIter.toArray
+        .sortBy(x => x.getName.replace(".json","").split("_").apply(1).toInt)
+      fileArray.foreach{file =>
         val data = GsonUtil.toMapString(Source.fromFile(file).mkString)
         val node = walk(data)
         treeNodeList.append(node)
@@ -167,5 +176,53 @@ class ParseTreeFromJson{
 
     res.toList
   }
+
+  def dot(root:decisionNode): String = {
+    val builder = new StringBuilder
+    builder.append("digraph DecisionTree {\n node [shape=box, style=\"filled, rounded\", color=\"black\", fontname=helvetica];\n edge [fontname=helvetica];\n")
+    var n = 0 // number of nodes processed
+    val queue:mutable.Queue[dotNode] = new scala.collection.mutable.Queue[dotNode]
+    queue.enqueue(dotNode(-1, 0, root))
+    while (!queue.isEmpty) { // Dequeue a vertex from queue and print it
+      val dnode = queue.dequeue()
+      val id = dnode.id
+      val parent = dnode.parentId
+      val node = dnode.node
+      // leaf node
+      if (node.leftChild == None && node.rightChild == None) {
+        builder.append(" %d [label=<class = %s>, fillcolor=\"#00000000\", shape=ellipse];\n".format(id, node.prediction))
+      }
+      else {
+        val split_type = node.splitType
+        if (split_type.contains("continuous")){
+          builder.append(" %d [label=<featur: %d &le; %s<br/>>, fillcolor=\"#00000000\"];\n".format(id, node.featureIndex.get, node.threshold.get))
+      } else {
+          builder.append(" %d [label=<feature: %d in %s<br/>>, fillcolor=\"#00000000\"];\n".format(id, node.featureIndex.get, node.leftCategories.get.mkString(",")))
+        }
+      }
+      // add edge
+      if (parent >= 0) {
+        builder.append(' ').append(parent).append(" -> ").append(id)
+        // only draw edge label at top
+        if (parent == 0) if (id == 1) builder.append(" [labeldistance=2.5, labelangle=45, headlabel=\"True\"]")
+        else builder.append(" [labeldistance=2.5, labelangle=-45, headlabel=\"False\"]")
+        builder.append(";\n")
+      }
+
+      if(!node.rightChild.isEmpty){
+        n += 1
+        queue.enqueue(dotNode(id,n,node.rightChild.get))
+      }
+
+      if(!node.leftChild.isEmpty){
+        n += 1
+        queue.enqueue(dotNode(id,n,node.leftChild.get))
+      }
+
+    }
+    builder.append("}")
+    builder.toString
+  }
+
 
 }

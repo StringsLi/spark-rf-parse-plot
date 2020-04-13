@@ -33,6 +33,11 @@ object LoadJsonModelTest {
       val pred2 = parse.predict_pro_one(dict)
       println(dict,pred2.toList)
     }
+
+    val tree1 = parse.treeNodeList.apply(5)
+    val dotS = parse.dot(tree1)
+    println(dotS)
+
   }
 
 
