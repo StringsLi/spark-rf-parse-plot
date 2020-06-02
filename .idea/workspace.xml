@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="994ae6eb-f6d0-4451-aab1-f95cc32f54de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/strings/algo/tree/graphviz/GraphViz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/strings/algo/tree/example/LoadJsonModelTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/strings/algo/tree/example/LoadJsonModelTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/strings/algo/tree/parse/ParseTreeFromJson.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/strings/algo/tree/parse/ParseTreeFromJson.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$$anonfun$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$$anonfun$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$$anonfun$main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/example/LoadJsonModelTest$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/FromJson2SparkTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/FromJson2SparkTree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$predict_pro_one$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$predict_pro_one$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$predict_raw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$predict_raw$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$read_data$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$read_data$1$$anonfun$apply$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$read_data$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$read_data$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$string2arr$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$string2arr$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$subdirs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson$$anonfun$subdirs$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/ParseTreeFromJson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/decisionNode$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/decisionNode$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/decisionNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/strings/algo/tree/parse/decisionNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_11.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_12.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plot/spark_tree_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plot/spark_tree_9.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,6 +159,7 @@
       <workItem from="1585797257182" duration="372000" />
       <workItem from="1585797637546" duration="10947000" />
       <workItem from="1586746491682" duration="9992000" />
+      <workItem from="1589870261970" duration="700000" />
     </task>
     <servers />
   </component>
