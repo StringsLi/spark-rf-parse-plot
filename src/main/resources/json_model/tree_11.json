@@ -1,12 +1,12 @@
 {
   "featureIndex":1,
-  "gain":0.4702558001189768,
-  "impurity":0.4702558001189768,
-  "threshold":0.6,
+  "gain":0.47165532879818595,
+  "impurity":0.47165532879818595,
+  "threshold":0.4,
   "nodeType":"internal",
   "impurityStats":[
-    31.0,
-    51.0
+    32.0,
+    52.0
   ],
   "splitType":"continuous",
   "prediction":1.0,
@@ -14,7 +14,7 @@
     "impurity":0.0,
     "nodeType":"leaf",
     "impurityStats":[
-      31.0,
+      32.0,
       0.0
     ],
     "prediction":0.0
@@ -24,7 +24,7 @@
     "nodeType":"leaf",
     "impurityStats":[
       0.0,
-      51.0
+      52.0
     ],
     "prediction":1.0
   }

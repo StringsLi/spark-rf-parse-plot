@@ -60,7 +60,7 @@ object RandomForestSaveModelExample {
     val model = pipeline.fit(trainingData)
 
     val originalModelPath = resource_path + "/orignal_model/"
-    model.save(originalModelPath)
+    model.write.overwrite().save(originalModelPath)
 
     // Make predictions.
     val predictions = model.transform(testData)

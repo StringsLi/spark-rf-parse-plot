@@ -1,44 +1,35 @@
 {
-  "featureIndex":2,
-  "gain":0.2611824807606313,
-  "impurity":0.4975662520281234,
-  "threshold":5.4,
+  "featureIndex":3,
+  "gain":0.26337448559670773,
+  "impurity":0.49382716049382713,
+  "threshold":3.1,
   "nodeType":"internal",
   "impurityStats":[
     40.0,
-    46.0
+    50.0
   ],
   "splitType":"continuous",
   "prediction":1.0,
   "leftChild":{
-    "featureIndex":3,
-    "gain":0.21139625924314898,
-    "impurity":0.2975206611570247,
-    "threshold":2.7,
+    "featureIndex":2,
+    "gain":0.1931412894375858,
+    "impurity":0.25240054869684503,
+    "threshold":4.9,
     "nodeType":"internal",
     "impurityStats":[
-      36.0,
-      8.0
+      8.0,
+      46.0
     ],
     "splitType":"continuous",
-    "prediction":0.0,
+    "prediction":1.0,
     "leftChild":{
-      "impurity":0.0,
-      "nodeType":"leaf",
-      "impurityStats":[
-        0.0,
-        6.0
-      ],
-      "prediction":1.0
-    },
-    "rightChild":{
       "featureIndex":0,
-      "gain":0.09972299168975082,
-      "impurity":0.09972299168975082,
-      "threshold":1.9,
+      "gain":0.31999999999999984,
+      "impurity":0.31999999999999984,
+      "threshold":1.6,
       "nodeType":"internal",
       "impurityStats":[
-        36.0,
+        8.0,
         2.0
       ],
       "splitType":"continuous",
@@ -47,7 +38,7 @@
         "impurity":0.0,
         "nodeType":"leaf",
         "impurityStats":[
-          36.0,
+          8.0,
           0.0
         ],
         "prediction":0.0
@@ -61,37 +52,46 @@
         ],
         "prediction":1.0
       }
-    }
-  },
-  "rightChild":{
-    "featureIndex":3,
-    "gain":0.17233560090702937,
-    "impurity":0.17233560090702937,
-    "threshold":3.4,
-    "nodeType":"internal",
-    "impurityStats":[
-      4.0,
-      38.0
-    ],
-    "splitType":"continuous",
-    "prediction":1.0,
-    "leftChild":{
-      "impurity":0.0,
-      "nodeType":"leaf",
-      "impurityStats":[
-        0.0,
-        38.0
-      ],
-      "prediction":1.0
     },
     "rightChild":{
       "impurity":0.0,
       "nodeType":"leaf",
       "impurityStats":[
-        4.0,
+        0.0,
+        44.0
+      ],
+      "prediction":1.0
+    }
+  },
+  "rightChild":{
+    "featureIndex":2,
+    "gain":0.1975308641975309,
+    "impurity":0.1975308641975309,
+    "threshold":5.8,
+    "nodeType":"internal",
+    "impurityStats":[
+      32.0,
+      4.0
+    ],
+    "splitType":"continuous",
+    "prediction":0.0,
+    "leftChild":{
+      "impurity":0.0,
+      "nodeType":"leaf",
+      "impurityStats":[
+        32.0,
         0.0
       ],
       "prediction":0.0
+    },
+    "rightChild":{
+      "impurity":0.0,
+      "nodeType":"leaf",
+      "impurityStats":[
+        0.0,
+        4.0
+      ],
+      "prediction":1.0
     }
   }
 }

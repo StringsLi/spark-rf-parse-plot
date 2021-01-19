@@ -1,7 +1,8 @@
 package org.apache.spark.ml.tree
 
 /**
- * 将spark tree model 保存成json文件格式
+ *
+ * 将spark tree model 保存成json文件格式，使用org.apache.spark.ml.tree.DecisionTreeModel 既支持回归树，也支持分类树
  * 参考 https://github.com/julioasotodv/spark-tree-plotting 改写
  */
 
@@ -18,21 +19,23 @@ case class decisionNode(featureIndex:Option[Int],
                         leftChild:Option[decisionNode],
                         rightChild:Option[decisionNode])
 
+case class dotNode(parentId:Int,id:Int,node:decisionNode)
+
 object Functions {
 
   def get_node_type(node:org.apache.spark.ml.tree.Node):String = node match {
-    case internal: org.apache.spark.ml.tree.InternalNode => "internal"
-    case other => "leaf"
+    case _: org.apache.spark.ml.tree.InternalNode => "internal"
+    case _ => "leaf"
   }
 
   def get_split_type(split:org.apache.spark.ml.tree.Split):String = split match {
-    case continuous: org.apache.spark.ml.tree.ContinuousSplit => "continuous"
-    case other => "categorical"
+    case _: org.apache.spark.ml.tree.ContinuousSplit => "continuous"
+    case _ => "categorical"
   }
 
 }
 
-class SparkMLTree(tree: org.apache.spark.ml.classification.DecisionTreeClassificationModel) {
+class SparkMLTree(tree: org.apache.spark.ml.tree.DecisionTreeModel) {
   def get_decision_rules(node: org.apache.spark.ml.tree.Node):decisionNode = {
     val node_type = Functions.get_node_type(node)
 
@@ -54,7 +57,7 @@ class SparkMLTree(tree: org.apache.spark.ml.classification.DecisionTreeClassific
     val node_threshold:Option[Double] = split_type match {
       case Some("continuous") => Some(node.asInstanceOf[org.apache.spark.ml.tree.InternalNode].split.asInstanceOf[org.apache.spark.ml.tree.ContinuousSplit].threshold)
       case Some("categorical") => None
-      case other => None
+      case _ => None
     }
 
     val (left_categories:Option[Array[Double]],
@@ -62,17 +65,17 @@ class SparkMLTree(tree: org.apache.spark.ml.classification.DecisionTreeClassific
       case Some("categorical") => (Some(node.asInstanceOf[org.apache.spark.ml.tree.InternalNode].split.asInstanceOf[org.apache.spark.ml.tree.CategoricalSplit].leftCategories),
         Some(node.asInstanceOf[org.apache.spark.ml.tree.InternalNode].split.asInstanceOf[org.apache.spark.ml.tree.CategoricalSplit].rightCategories)
       )
-      case other => (None,None)
+      case _ => (None,None)
     }
 
     val left_child: Option[decisionNode] = node_type match {
       case "internal" => Some(get_decision_rules(node.asInstanceOf[org.apache.spark.ml.tree.InternalNode].leftChild))
-      case other => None
+      case _ => None
     }
 
     val right_child: Option[decisionNode] = node_type match {
       case "internal" => Some(get_decision_rules(node.asInstanceOf[org.apache.spark.ml.tree.InternalNode].rightChild))
-      case other => None
+      case _ => None
     }
 
     decisionNode(featureIndex = feature_index,
@@ -98,5 +101,5 @@ class SparkMLTree(tree: org.apache.spark.ml.classification.DecisionTreeClassific
 }
 
 object Implicits {
-  implicit def genTree(tree:org.apache.spark.ml.classification.DecisionTreeClassificationModel) = new SparkMLTree(tree)
+  implicit def genTree(tree:org.apache.spark.ml.tree.DecisionTreeModel) = new SparkMLTree(tree)
 }

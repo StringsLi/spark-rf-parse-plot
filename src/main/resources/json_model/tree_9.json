@@ -1,24 +1,24 @@
 {
   "featureIndex":2,
-  "gain":0.27562056164309445,
-  "impurity":0.4946492271105827,
-  "threshold":5.1,
+  "gain":0.2983074625990446,
+  "impurity":0.490230084402821,
+  "threshold":5.4,
   "nodeType":"internal",
   "impurityStats":[
-    39.0,
-    48.0
+    40.0,
+    53.0
   ],
   "splitType":"continuous",
   "prediction":1.0,
   "leftChild":{
     "featureIndex":0,
-    "gain":0.16089965397923883,
-    "impurity":0.16089965397923883,
+    "gain":0.18836565096952906,
+    "impurity":0.18836565096952906,
     "threshold":1.9,
     "nodeType":"internal",
     "impurityStats":[
-      31.0,
-      3.0
+      34.0,
+      4.0
     ],
     "splitType":"continuous",
     "prediction":0.0,
@@ -26,7 +26,7 @@
       "impurity":0.0,
       "nodeType":"leaf",
       "impurityStats":[
-        31.0,
+        34.0,
         0.0
       ],
       "prediction":0.0
@@ -36,20 +36,20 @@
       "nodeType":"leaf",
       "impurityStats":[
         0.0,
-        3.0
+        4.0
       ],
       "prediction":1.0
     }
   },
   "rightChild":{
     "featureIndex":0,
-    "gain":0.25631897472410103,
-    "impurity":0.25631897472410103,
-    "threshold":1.7,
+    "gain":0.19438016528925628,
+    "impurity":0.19438016528925628,
+    "threshold":1.4,
     "nodeType":"internal",
     "impurityStats":[
-      8.0,
-      45.0
+      6.0,
+      49.0
     ],
     "splitType":"continuous",
     "prediction":1.0,
@@ -57,7 +57,7 @@
       "impurity":0.0,
       "nodeType":"leaf",
       "impurityStats":[
-        8.0,
+        6.0,
         0.0
       ],
       "prediction":0.0
@@ -67,7 +67,7 @@
       "nodeType":"leaf",
       "impurityStats":[
         0.0,
-        45.0
+        49.0
       ],
       "prediction":1.0
     }
